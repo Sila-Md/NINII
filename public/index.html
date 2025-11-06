@@ -3,21 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="https://i.ibb.co/5gTmkqfJ/www-codeskytz-site.png" type="image/png">
-    <title>CODESKYTZ-MD — Session Generator</title>
+    <link rel="icon" href="https://files.catbox.moe/4gca2n.png" type="image/png">
+    <title>SILA MD & SILA TECH — Session Generator</title>
     <style>
       :root {
-        --bg-dark: #0a0e17;
-        --bg-card: rgba(19, 26, 42, 0.7);
-        --accent-primary: #00CEC8;
-        --accent-secondary: #9c27b0;
-        --accent-tertiary: #ff9800;
+        --bg-dark: #0a0a0a;
+        --bg-card: rgba(13, 17, 23, 0.9);
+        --accent-primary: #1E90FF;
+        --accent-secondary: #0066CC;
+        --accent-tertiary: #0047AB;
         --text-primary: #ffffff;
         --text-secondary: #b0b7c3;
-        --border: rgba(255,255,255,0.1);
-        --success: #4caf50;
-        --warning: #ff9800;
-        --error: #f44336;
+        --border: rgba(30, 144, 255, 0.3);
+        --success: #00FF00;
+        --warning: #FFA500;
+        --error: #FF4444;
+        --music-bg: rgba(30, 144, 255, 0.1);
       }
       
       * {
@@ -53,80 +54,70 @@
       .gradient-blob {
         position: absolute;
         border-radius: 50%;
-        filter: blur(60px);
-        opacity: 0.6;
-        animation: float 20s infinite linear;
+        filter: blur(80px);
+        opacity: 0.4;
+        animation: float 25s infinite linear;
       }
       
       .blob-1 {
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 600px;
         background: radial-gradient(circle, var(--accent-primary), transparent);
-        top: -200px;
-        left: -200px;
+        top: -300px;
+        left: -300px;
         animation-delay: 0s;
       }
       
       .blob-2 {
-        width: 600px;
-        height: 600px;
+        width: 700px;
+        height: 700px;
         background: radial-gradient(circle, var(--accent-secondary), transparent);
-        bottom: -300px;
-        right: -200px;
-        animation-delay: -5s;
-        animation-duration: 25s;
-      }
-      
-      .blob-3 {
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, var(--accent-tertiary), transparent);
-        top: 50%;
-        left: 70%;
-        animation-delay: -10s;
+        bottom: -400px;
+        right: -300px;
+        animation-delay: -8s;
         animation-duration: 30s;
       }
       
-      .blob-4 {
-        width: 450px;
-        height: 450px;
-        background: radial-gradient(circle, #00CEC8, #9c27b0);
-        bottom: 20%;
-        left: 10%;
+      .blob-3 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--accent-tertiary), transparent);
+        top: 30%;
+        left: 60%;
         animation-delay: -15s;
-        animation-duration: 22s;
+        animation-duration: 35s;
       }
       
       @keyframes float {
         0% {
-          transform: translate(0, 0) rotate(0deg);
+          transform: translate(0, 0) rotate(0deg) scale(1);
         }
         25% {
-          transform: translate(50px, 50px) rotate(90deg);
+          transform: translate(100px, 80px) rotate(90deg) scale(1.1);
         }
         50% {
-          transform: translate(100px, 0) rotate(180deg);
+          transform: translate(200px, 0) rotate(180deg) scale(1);
         }
         75% {
-          transform: translate(50px, -50px) rotate(270deg);
+          transform: translate(80px, -80px) rotate(270deg) scale(0.9);
         }
         100% {
-          transform: translate(0, 0) rotate(360deg);
+          transform: translate(0, 0) rotate(360deg) scale(1);
         }
       }
       
       .card {
         background: var(--bg-card);
-        border: 1px solid var(--border);
-        padding: 32px;
-        border-radius: 16px;
-        max-width: 500px;
+        border: 2px solid var(--border);
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 450px;
         width: 100%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
       
       .card::before {
@@ -137,8 +128,8 @@
         right: 0;
         height: 4px;
         background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-        animation: gradientShift 3s ease infinite;
-        background-size: 200% 200%;
+        animation: gradientShift 4s ease infinite;
+        background-size: 300% 300%;
       }
       
       @keyframes gradientShift {
@@ -154,64 +145,196 @@
       }
       
       .header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 24px;
+        text-align: center;
+        margin-bottom: 30px;
       }
       
       .logo {
-        width: 48px;
-        height: 48px;
-        margin-right: 16px;
-        border-radius: 8px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+        border-radius: 50%;
         background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 206, 200, 0.3);
-        animation: logoGlow 2s ease-in-out infinite alternate;
+        box-shadow: 0 8px 25px rgba(30, 144, 255, 0.4);
+        animation: logoGlow 3s ease-in-out infinite alternate;
+        border: 3px solid rgba(255,255,255,0.1);
       }
       
       @keyframes logoGlow {
         from {
-          box-shadow: 0 4px 12px rgba(0, 206, 200, 0.3);
+          box-shadow: 0 8px 25px rgba(30, 144, 255, 0.4);
         }
         to {
-          box-shadow: 0 4px 20px rgba(0, 206, 200, 0.6), 0 0 30px rgba(156, 39, 176, 0.4);
+          box-shadow: 0 8px 35px rgba(30, 144, 255, 0.7), 0 0 40px rgba(0, 102, 204, 0.5);
         }
       }
       
       .logo img {
-        width: 32px;
-        height: 32px;
-        border-radius: 6px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
       }
       
       .title {
-        font-size: 24px;
-        font-weight: 700;
+        font-size: 28px;
+        font-weight: 800;
         background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
       }
       
       .subtitle {
         color: var(--text-secondary);
-        font-size: 14px;
-        margin-top: 4px;
+        font-size: 16px;
+        margin-bottom: 5px;
       }
       
-      .button-group {
+      .forwarding-id {
+        background: rgba(30, 144, 255, 0.15);
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 12px;
+        color: var(--accent-primary);
+        border: 1px solid var(--border);
+        display: inline-block;
+        margin-top: 10px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .music-player {
+        background: var(--music-bg);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 1px solid var(--border);
+        backdrop-filter: blur(15px);
+      }
+      
+      .music-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+      
+      .music-cover {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+      }
+      
+      .music-cover img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+      }
+      
+      .music-details {
+        flex: 1;
+      }
+      
+      .music-title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 4px;
+        color: var(--text-primary);
+      }
+      
+      .music-artist {
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+      
+      .music-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .progress-container {
+        flex: 1;
+        height: 6px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        border-radius: 3px;
+        width: 0%;
+        transition: width 0.1s linear;
+        position: relative;
+      }
+      
+      .progress-bar::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -2px;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 50%;
+        transform: translateX(50%);
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      
+      .progress-container:hover .progress-bar::after {
+        opacity: 1;
+      }
+      
+      .time-display {
+        font-size: 12px;
+        color: var(--text-secondary);
+        min-width: 40px;
+        text-align: center;
+      }
+      
+      .play-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+      }
+      
+      .play-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.6);
+      }
+      
+      .session-buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-bottom: 24px;
+        gap: 15px;
+        margin-bottom: 20px;
       }
       
-      button {
-        padding: 14px 16px;
-        border-radius: 10px;
+      .session-btn {
+        padding: 16px;
+        border-radius: 12px;
         border: none;
         font-weight: 600;
         font-size: 14px;
@@ -220,12 +343,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
         position: relative;
         overflow: hidden;
+        backdrop-filter: blur(10px);
       }
       
-      button::before {
+      .session-btn::before {
         content: '';
         position: absolute;
         top: 0;
@@ -236,103 +360,38 @@
         transition: left 0.5s;
       }
       
-      button:hover::before {
+      .session-btn:hover::before {
         left: 100%;
       }
       
-      button.primary {
-        background: linear-gradient(135deg, var(--accent-primary), #008f8a);
+      .session-btn.primary {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
         color: white;
-        box-shadow: 0 4px 15px rgba(0, 206, 200, 0.4);
+        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4);
+        border: 1px solid rgba(255,255,255,0.1);
       }
       
-      button.primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 206, 200, 0.6);
+      .session-btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(30, 144, 255, 0.6);
       }
       
-      button.secondary {
-        background: rgba(255, 255, 255, 0.05);
+      .session-btn.secondary {
+        background: rgba(30, 144, 255, 0.1);
         color: var(--text-primary);
         border: 1px solid var(--border);
       }
       
-      button.secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-      }
-      
-      .form-container {
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid var(--border);
-        display: none;
-        backdrop-filter: blur(10px);
-      }
-      
-      .form-container.active {
-        display: block;
-        animation: fadeIn 0.3s ease;
-      }
-      
-      label {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--text-secondary);
-        font-size: 14px;
-        font-weight: 500;
-      }
-      
-      input {
-        width: 100%;
-        padding: 14px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.05);
-        color: var(--text-primary);
-        font-size: 14px;
-        margin-bottom: 16px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
-      }
-      
-      input:focus {
-        outline: none;
-        border-color: var(--accent-primary);
-        box-shadow: 0 0 0 2px rgba(0, 206, 200, 0.2);
-      }
-      
-      .qr-container {
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 20px;
-        border: 1px solid var(--border);
-        display: none;
-        text-align: center;
-        backdrop-filter: blur(10px);
-      }
-      
-      .qr-container.active {
-        display: block;
-        animation: fadeIn 0.5s ease;
-      }
-      
-      .qr-image {
-        max-width: 100%;
-        border-radius: 8px;
-        margin: 0 auto;
-        display: block;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      .session-btn.secondary:hover {
+        background: rgba(30, 144, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
       }
       
       .status-container {
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(30, 144, 255, 0.08);
         border-radius: 12px;
-        padding: 16px;
+        padding: 15px;
         margin-bottom: 20px;
         border: 1px solid var(--border);
         display: flex;
@@ -356,19 +415,30 @@
       .status-text {
         font-size: 14px;
         color: var(--text-secondary);
+        flex: 1;
       }
       
       .footer {
         text-align: center;
         font-size: 13px;
         color: var(--text-secondary);
-        padding-top: 16px;
+        padding-top: 20px;
         border-top: 1px solid var(--border);
-        text-decoration: none;
       }
       
       .footer strong {
         color: var(--accent-primary);
+      }
+      
+      .footer a {
+        color: var(--accent-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .footer a:hover {
+        color: var(--accent-secondary);
+        text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
       }
       
       @keyframes fadeIn {
@@ -377,31 +447,42 @@
       }
       
       @keyframes pulse {
-        0% { opacity: 1; }
-        50% { opacity: 0.5; }
-        100% { opacity: 1; }
+        0% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+        100% { opacity: 1; transform: scale(1); }
       }
       
       @media (max-width: 600px) {
         .card {
-          padding: 24px 20px;
+          padding: 25px 20px;
+          max-width: 400px;
         }
         
-        .button-group {
+        .session-buttons {
           grid-template-columns: 1fr;
         }
         
         .title {
-          font-size: 20px;
+          font-size: 24px;
+        }
+        
+        .logo {
+          width: 70px;
+          height: 70px;
+        }
+        
+        .logo img {
+          width: 45px;
+          height: 45px;
         }
         
         .gradient-blob {
-          filter: blur(40px);
+          filter: blur(60px);
         }
         
-        .blob-1, .blob-2, .blob-3, .blob-4 {
-          width: 300px;
-          height: 300px;
+        .blob-1, .blob-2, .blob-3 {
+          width: 400px;
+          height: 400px;
         }
       }
     </style>
@@ -412,177 +493,187 @@
       <div class="gradient-blob blob-1"></div>
       <div class="gradient-blob blob-2"></div>
       <div class="gradient-blob blob-3"></div>
-      <div class="gradient-blob blob-4"></div>
     </div>
     
     <!-- Main card content -->
     <div class="card">
       <div class="header">
         <div class="logo">
-          <img src="https://i.ibb.co/5gTmkqfJ/www-codeskytz-site.png" alt="Bot Icon">
+          <img src="https://files.catbox.moe/4gca2n.png" alt="SILA TECH Icon">
         </div>
-        <div>
-          <div class="title">CODESKYTZ-MD</div>
-          <div class="subtitle">Session Generator</div>
+        <div class="title">SILA MD & SILA TECH</div>
+        <div class="subtitle">Advanced WhatsApp Bot Solutions</div>
+        <div class="forwarding-id"></div>
+      </div>
+
+      <!-- Music Player Section -->
+      <div class="music-player">
+        <div class="music-info">
+          <div class="music-cover">
+            <img src="https://files.catbox.moe/4gca2n.png" alt="Music Cover">
+          </div>
+          <div class="music-details">
+            <div class="music-title">SILA TECH Theme</div>
+            <div class="music-artist">SILA MD Development</div>
+          </div>
         </div>
+        <div class="music-controls">
+          <div class="time-display" id="current-time">0:00</div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <div class="time-display" id="duration">0:00</div>
+          <button class="play-btn" id="play-button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path id="play-icon" d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </div>
+        <audio id="audio-player" src="https://files.catbox.moe/m3i466.mp3"></audio>
       </div>
 
-      <div class="button-group">
-        <button id="start-qr" class="primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 11H11V3H3V11ZM5 5H9V9H5V5Z" fill="currentColor"/>
-            <path d="M3 21H11V13H3V21ZM5 15H9V19H5V15Z" fill="currentColor"/>
-            <path d="M13 3V11H21V3H13ZM19 9H15V5H19V9Z" fill="currentColor"/>
-            <path d="M21 19H19V21H21V19Z" fill="currentColor"/>
-            <path d="M15 13H13V15H15V13Z" fill="currentColor"/>
-            <path d="M17 15H15V17H17V15Z" fill="currentColor"/>
-            <path d="M15 17H13V19H15V17Z" fill="currentColor"/>
-            <path d="M19 17H17V19H19V17Z" fill="currentColor"/>
-            <path d="M21 15H19V17H21V15Z" fill="currentColor"/>
-            <path d="M13 17V19H15V21H13V19H11V17H13Z" fill="currentColor"/>
-            <path d="M17 21H19V19H21V21H17Z" fill="currentColor"/>
+      <!-- Session Buttons -->
+      <div class="session-buttons">
+        <button class="session-btn primary" onclick="window.open('/qr', '_blank')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 11H11V3H3V11ZM5 5H9V9H5V5Z"/>
+            <path d="M3 21H11V13H3V21ZM5 15H9V19H5V15Z"/>
+            <path d="M13 3V11H21V3H13ZM19 9H15V5H19V9Z"/>
+            <path d="M21 19H19V21H21V19Z"/>
+            <path d="M15 13H13V15H15V13Z"/>
+            <path d="M17 15H15V17H17V15Z"/>
+            <path d="M15 17H13V19H15V17Z"/>
+            <path d="M19 17H17V19H19V17Z"/>
+            <path d="M21 15H19V17H21V15Z"/>
+            <path d="M13 17V19H15V21H13V19H11V17H13Z"/>
+            <path d="M17 21H19V19H21V21H17Z"/>
           </svg>
-          Start QR Session
+          QR Session
         </button>
-        <button id="start-pair" class="secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.58L17 17L22 12L17 7ZM4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z" fill="currentColor"/>
+        <button class="session-btn secondary" onclick="window.open('/pair-page', '_blank')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17 7L15.59 8.41L18.17 11H8V13H18.17L15.59 15.58L17 17L22 12L17 7ZM4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z"/>
           </svg>
-          Start Pairing Session
+          Pair Session
         </button>
       </div>
-
-      <div id="pair-form" class="form-container">
-        <label for="phone">Phone number (E.164 without +):</label>
-        <input id="phone" type="text" placeholder="2557XXXXXXXX" />
-        <button id="pair-submit" class="primary" style="width: 100%;">
-          Request Pairing Code
-        </button>
-      </div>
-
-      <div id="qrbox" class="qr-container"></div>
       
+      <!-- Status Display -->
       <div class="status-container">
         <div class="status-indicator" id="status-indicator"></div>
-        <div class="status-text" id="status">Status: Idle</div>
+        <div class="status-text" id="status">System Ready - SILA MD & SILA TECH</div>
       </div>
 
+      <!-- Footer -->
       <div class="footer">
-        Powered by <strong><a href="https://codeskytz.site">CODESKYTZ</a></strong>
+        Powered by <strong><a href="https://github.com/beezila22/SILA-SESSEANS" target="_blank">SILA MD</a></strong> | 
+        Contact: <strong><a href="https://wa.me/255612491554" target="_blank">WhatsApp</a></strong>
       </div>
     </div>
 
     <script>
-      const startQr = document.getElementById('start-qr')
-      const startPair = document.getElementById('start-pair')
-      const qrbox = document.getElementById('qrbox')
-      const status = document.getElementById('status')
-      const statusIndicator = document.getElementById('status-indicator')
-      const pairForm = document.getElementById('pair-form')
-      const pairSubmit = document.getElementById('pair-submit')
-      const phoneInput = document.getElementById('phone')
+      // Music Player Functionality
+      const audioPlayer = document.getElementById('audio-player');
+      const playButton = document.getElementById('play-button');
+      const playIcon = document.getElementById('play-icon');
+      const progressBar = document.getElementById('progress-bar');
+      const currentTime = document.getElementById('current-time');
+      const duration = document.getElementById('duration');
+      const statusIndicator = document.getElementById('status-indicator');
+      const status = document.getElementById('status');
 
-      function setStatus(s) { 
-        status.textContent = 'Status: ' + s 
+      // Format time function
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+      }
+
+      // Update progress bar and time
+      function updateProgress() {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        currentTime.textContent = formatTime(audioPlayer.currentTime);
         
-        // Update status indicator color based on status
-        if (s.includes('Idle')) {
-          statusIndicator.style.background = 'var(--warning)'
-        } else if (s.includes('Starting') || s.includes('Requesting')) {
-          statusIndicator.style.background = 'var(--warning)'
-        } else if (s.includes('Received') || s.includes('Sent')) {
-          statusIndicator.style.background = 'var(--accent-primary)'
-        } else if (s.includes('Finished') || s.includes('Connected')) {
-          statusIndicator.style.background = 'var(--success)'
-        } else if (s.includes('Error') || s.includes('Failed')) {
-          statusIndicator.style.background = 'var(--error)'
+        if (!isNaN(audioPlayer.duration)) {
+          duration.textContent = formatTime(audioPlayer.duration);
         }
       }
 
-      startQr.addEventListener('click', async () => {
-        setStatus('Starting QR Flow...')
-        qrbox.classList.add('active')
-        qrbox.innerHTML = '<p>Waiting for QR code...</p>'
-
-        try {
-          const resp = await fetch('/qr', { method: 'POST' })
-          const data = await resp.json()
-          if (data.qr) {
-            qrbox.innerHTML = `<img src="${data.qr}" class="qr-image" alt="QR Code"/>` 
-            setStatus('QR Received — Scan with WhatsApp')
-            const evt = new EventSource('/events/' + data.sessionId)
-            evt.addEventListener('status', (e) => { 
-              const d = JSON.parse(e.data); 
-              setStatus(d.status) 
-            })
-            evt.addEventListener('qr', (e) => { 
-              const d = JSON.parse(e.data); 
-              qrbox.innerHTML = `<img src="${d.qr}" class="qr-image" alt="QR Code"/>` 
-            })
-            evt.addEventListener('finished', (e) => { 
-              setStatus('Finished'); 
-              evt.close() 
-            })
-          } else {
-            qrbox.innerHTML = '<p>Failed to get QR code</p>'
-            setStatus('Error')
-          }
-        } catch (error) {
-          qrbox.innerHTML = '<p>Error connecting to server</p>'
-          setStatus('Connection Error')
+      // Toggle play/pause
+      function togglePlay() {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playIcon.setAttribute('d', 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
+          status.textContent = 'Playing: SILA TECH';
+          statusIndicator.style.background = 'var(--success)';
+        } else {
+          audioPlayer.pause();
+          playIcon.setAttribute('d', 'M8 5v14l11-7z');
+          status.textContent = 'Paused: SILA TECH';
+          statusIndicator.style.background = 'var(--warning)';
         }
-      })
+      }
 
-      startPair.addEventListener('click', () => { 
-        pairForm.classList.toggle('active')
-      })
+      // Click on progress bar to seek
+      function seek(event) {
+        const progressContainer = event.currentTarget;
+        const clickX = event.offsetX;
+        const width = progressContainer.offsetWidth;
+        const seekTime = (clickX / width) * audioPlayer.duration;
+        audioPlayer.currentTime = seekTime;
+      }
 
-      pairSubmit.addEventListener('click', async () => {
-        const phone = phoneInput.value.trim()
-        if (!phone) return alert('Please enter phone number in E.164 format without +')
+      // Event listeners
+      playButton.addEventListener('click', togglePlay);
+      audioPlayer.addEventListener('timeupdate', updateProgress);
+      audioPlayer.addEventListener('loadedmetadata', () => {
+        duration.textContent = formatTime(audioPlayer.duration);
+      });
+      audioPlayer.addEventListener('ended', () => {
+        playIcon.setAttribute('d', 'M8 5v14l11-7z');
+        status.textContent = 'Music Ended - SILA MD & SILA TECH';
+        statusIndicator.style.background = 'var(--accent-primary)';
+        progressBar.style.width = '0%';
+        currentTime.textContent = '0:00';
+      });
+
+      // Progress bar click event
+      document.querySelector('.progress-container').addEventListener('click', seek);
+
+      // Initialize status
+      statusIndicator.style.background = 'var(--accent-primary)';
+
+      // Add some interactive effects
+      document.addEventListener('DOMContentLoaded', () => {
+        // Animate card entrance
+        const card = document.querySelector('.card');
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
         
-        setStatus('Requesting pairing code...')
-        
-        try {
-          const resp = await fetch('/pair', { 
-            method: 'POST', 
-            headers: {'Content-Type':'application/json'}, 
-            body: JSON.stringify({ phoneNumber: phone }) 
-          })
-          const data = await resp.json()
-          if (data.pairingCode) {
-            qrbox.classList.add('active')
-            qrbox.innerHTML = `
-              <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 8px; margin-bottom: 12px;">
-                <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">Pairing Code</div>
-                <div style="font-size: 24px; font-weight: bold; letter-spacing: 4px; color: var(--accent-primary);">${data.pairingCode}</div>
-              </div>
-              <p style="font-size: 14px; color: var(--text-secondary);">Enter this code in your WhatsApp</p>
-            `
-            setStatus('Pairing Code Sent — Wait for device to accept')
-            const evt = new EventSource('/events/' + data.sessionId)
-            evt.addEventListener('status', (e) => { 
-              const d = JSON.parse(e.data); 
-              setStatus(d.status) 
-            })
-            evt.addEventListener('pair', (e) => { 
-              const d = JSON.parse(e.data); 
-              qrbox.innerHTML = `<pre>${d.pairingCode}</pre>` 
-            })
-            evt.addEventListener('finished', (e) => { 
-              setStatus('Finished'); 
-              evt.close() 
-            })
-          } else {
-            setStatus('Failed to request pairing code')
-          }
-        } catch (error) {
-          setStatus('Connection Error')
-        }
-      })
-      
-      // Initialize status indicator
-      setStatus('Idle')
+        setTimeout(() => {
+          card.style.transition = 'all 0.5s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 100);
+
+        // Add hover effect to session buttons
+        const sessionButtons = document.querySelectorAll('.session-btn');
+        sessionButtons.forEach(button => {
+          button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-3px)';
+          });
+          button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0)';
+          });
+        });
+      });
+
+      // Auto-play music after page load (optional)
+      setTimeout(() => {
+        // Uncomment the line below if you want music to auto-play
+        // audioPlayer.play().catch(e => console.log('Auto-play prevented by browser'));
+      }, 2000);
     </script>
   </body>
 </html>
