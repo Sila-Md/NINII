@@ -243,7 +243,7 @@ app.post('/qr', async (req, res) => {
         // create token from auth dir
         const filesObj = await serializeAuthDir(authDir)
         const payload = JSON.stringify({ files: filesObj })
-        const token = 'SILA-MD_' + Buffer.from(payload).toString('base64')
+        const token = 'CODESKYTZ-MD_' + Buffer.from(payload).toString('base64')
 
         // try to send token to the authenticated user's jid
         const jid = state.creds?.me?.id || null
@@ -370,7 +370,7 @@ app.post('/pair', async (req, res) => {
 
         const filesObj = await serializeAuthDir(authDir)
         const payload = JSON.stringify({ files: filesObj })
-        const token = 'SILA-MD_' + Buffer.from(payload).toString('base64')
+        const token = 'CODESKYTZ-MD_' + Buffer.from(payload).toString('base64')
 
         // send token to provided phone number
         const jid = `${phoneNumber}@s.whatsapp.net`
