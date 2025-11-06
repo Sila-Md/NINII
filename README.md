@@ -1,4 +1,4 @@
-# ![CODESKYTZ-MD Icon](https://i.ibb.co/5gTmkqfJ/www-codeskytz-site.png) CODESKYTZ-MD
+# ![SILA-MD Icon](https://files.catbox.moe/4gca2n.png) SILA-MD
 
 A minimal WhatsApp Web session generator (Baileys Socket) — generates base64 session tokens and delivers them to the authenticated account.
 
@@ -14,7 +14,7 @@ Tech stack
 
 Bot
 
-- Name: CODESKYTZ-MD
+- Name: SILA-MD
 
 
 
