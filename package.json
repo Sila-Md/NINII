@@ -1,0 +1,38 @@
+{
+  "type": "module",
+  "name": "codeskytz-md",
+  "version": "1.0.0",
+  "description": "a codeskytz-md bot session generator ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeskytz/session-gen.git"
+  },
+  "keywords": [
+    "baileys",
+    "whatsapp",
+    "automation",
+    "codeskytz"
+  ],
+  "author": "codeskytz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codeskytz/session-gen/issues"
+  },
+  "homepage": "https://github.com/codeskytz/session-gen#readme",
+  "dependencies": {
+    "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pino": "^8.0.0",
+    "qrcode": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
